@@ -13,6 +13,9 @@
   },
   "plugins": ["react"],
   "rules": {
-    "no-use-before-define": 0
+    "no-use-before-define": 0,
+    "object-curly-newline": 0,
+    "quotes": 0,
+    "max-len": 0
   }
 }
