@@ -1,13 +1,11 @@
 import React from "react";
 import { View, StyleSheet, Text, TextInput, TouchableOpacity } from "react-native";
 
-import AppBar from "../components/AppBar";
 import SubmitButton from "../components/SubmitButton";
 
 export default function LogInScreen() {
   return (
     <View style={styles.container}>
-      <AppBar />
       <View style={styles.inner}>
         <Text style={styles.title}>Loi In</Text>
         <TextInput style={styles.input} value="email address" />
