@@ -1,17 +1,23 @@
 import React from "react";
-import { View, Text, StyleSheet, string } from "react-native";
+import { Text, StyleSheet, TouchableOpacity } from "react-native";
+import { string, func } from "prop-types";
 
 export default function SubmitButton(props) {
-  const { label } = props;
+  const { label, onPress } = props;
   return (
-    <View style={styles.buttonContainer}>
+    <TouchableOpacity style={styles.buttonContainer} onPress={onPress}>
       <Text style={styles.buttonLabel}>{label}</Text>
-    </View>
+    </TouchableOpacity>
   );
 }
 
 SubmitButton.propTypes = {
   label: string.isRequired,
+  onPress: func,
+};
+
+SubmitButton.defaultProps = {
+  onPress: null,
 };
 
 const styles = StyleSheet.create({
