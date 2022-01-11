@@ -3,18 +3,37 @@ import { View, StyleSheet, Text, TextInput, TouchableOpacity } from "react-nativ
 
 import SubmitButton from "../components/SubmitButton";
 
-export default function SignUpScreen() {
+export default function SignUpScreen(props) {
+  const { navigation } = props;
   return (
     <View style={styles.container}>
       <View style={styles.inner}>
         <Text style={styles.title}>Sigh up</Text>
         <TextInput style={styles.input} value="email address" />
         <TextInput style={styles.input} value="xx" />
-        <SubmitButton label="Submit" />
+        <SubmitButton
+          label="Submit"
+          onPress={() => {
+            navigation.reset({
+              index: 0,
+              routes: [{ name: "MemoList" }],
+            });
+          }}
+        />
         <View style={styles.footer}>
           <Text style={styles.footerText}>Already registerd?</Text>
           <TouchableOpacity>
-            <Text style={styles.footerLink}>Log in.</Text>
+            <Text
+              style={styles.footerLink}
+              onPress={() => {
+                navigation.reset({
+                  index: 0,
+                  routes: [{ name: "LogIn" }],
+                });
+              }}
+            >
+              Log in.
+            </Text>
           </TouchableOpacity>
         </View>
       </View>
